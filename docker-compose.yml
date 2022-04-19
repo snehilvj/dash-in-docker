@@ -7,3 +7,6 @@ services:
       - 3000:8050
     volumes:
       - ./:/app:ro
+
+  redis:
+    image: redis
