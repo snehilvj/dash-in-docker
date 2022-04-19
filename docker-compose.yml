@@ -1,0 +1,9 @@
+version: "3"
+services:
+  dash-docker:
+    build:
+      context: .
+    ports:
+      - 3000:8050
+    volumes:
+      - ./:/app:ro

@@ -1,0 +1,8 @@
+.venv
+.git
+.gitignore
+Dockerfile
+docker-compose*
+LICENSE
+README.md
+.idea

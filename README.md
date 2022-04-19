@@ -6,6 +6,4 @@
 ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
 
 
-Consolidating my docker learnings with a Plotly Dash App which uses Redis for caching and storage and is served by an
-Nginx reverse proxy.
-
+Consolidating my docker learnings with a Plotly Dash App which uses Redis for caching and storage and Nginx for serving frontend.
