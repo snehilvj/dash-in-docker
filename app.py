@@ -19,9 +19,9 @@ cache = Cache(
 
 app.layout = dmc.Group(
     [
+        dmc.Text("Dash-Docker"),
         dmc.NumberInput(id="number", value=1, min=1),
         html.Div(id="container"),
-        dmc.Button("Click Me!"),
     ]
 )
 

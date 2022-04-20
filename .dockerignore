@@ -6,3 +6,4 @@ docker-compose*
 LICENSE
 README.md
 .idea
+.dockerignore
