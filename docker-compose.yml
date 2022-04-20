@@ -3,10 +3,23 @@ services:
   dash-docker:
     build:
       context: .
-    ports:
-      - 3000:8050
+      args:
+        - POETRY_VERSION=1.1.13
+        - DASH_PORT=8050
+    depends_on:
+      - redis
     volumes:
       - ./:/app:ro
+    environment:
+      - REDIS_PORT=6379
+      - DASH_PORT=8050
 
   redis:
-    image: redis
+    image: redis:alpine
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 3000:80

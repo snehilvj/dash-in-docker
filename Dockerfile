@@ -1,6 +1,7 @@
 FROM python:3.8
 
-RUN pip install poetry==1.1.13
+ARG POETRY_VERSION
+RUN pip install poetry==${POETRY_VERSION}
 
 WORKDIR /app
 COPY pyproject.toml .
@@ -10,5 +11,5 @@ RUN poetry export -f requirements.txt --without-hashes --output requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
-
-CMD ["python", "app.py"]
+ARG DASH_PORT
+CMD gunicorn -b 0.0.0.0:${DASH_PORT} --reload app:server
